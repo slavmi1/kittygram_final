@@ -28,7 +28,7 @@ jobs:
       - name: Install dependencies
         run: |
           python -m pip install --upgrade pip
-          pip install ruff=0.8.0
+          pip install ruff==0.8.0
           pip install -r ./backend/requirements.txt
       - name: Lint with ruff and run django tests
         env:
@@ -116,7 +116,7 @@ jobs:
       - name: Push to DockerHub
         uses: docker/build-push-action@v5
         with:
-          context: ./gateway/
+          context: ./nginx/
           push: true
           tags: slavm1/kittygram_gateway:latest
 
